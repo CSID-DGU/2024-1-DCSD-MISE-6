@@ -9,7 +9,7 @@ def load_documents_from_csv(file_path):
     return loader.load()
 
 def split_text_in_documents(docs):
-    text_splitter = RecursiveCharacterTextSplitter()
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=900,chunk_overlap=200)
     return text_splitter.split_documents(docs)
 
 def create_embeddings_model(api_key, model_name):
