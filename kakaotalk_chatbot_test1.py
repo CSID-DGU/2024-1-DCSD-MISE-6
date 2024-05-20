@@ -9,7 +9,7 @@ application = Flask(__name__)
 def keyword():    
 	req = request.get_json()    
 	text_ck = req['userRequest']['utterance']    
-	text = '정보를 찾을 수 없습니다.'     
+	text = '정보를 찾을 수 없습니다'     
 
 	text = text_ck*3
 
