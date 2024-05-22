@@ -1,5 +1,6 @@
 from OCR_image import *
 from text_summarize import *
+from create_answer import * 
 import imghdr
 import os
 from flask import Flask, request, jsonify
@@ -40,7 +41,9 @@ def keyword():
     req = request.get_json()
     text_ck = req['userRequest']['utterance']
     text_out = classify_input(text_ck)
-    text = process_query(text_out)
+    before_text = process_query(text_out)
+    text = create_output(before_text)
+    
 
     res = {
         "version": "2.0",
