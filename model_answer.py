@@ -8,7 +8,7 @@ import torch
 
 app = Flask(__name__)
 
-model_id = "JianKim3293/llama3-KoEn-8B-Instruct-law"
+model_id = "JianKim3293/llama3-KoEn-8B-Instruct-mergelaw"
 
 compute_dtype = torch.float16
 quant_config = BitsAndBytesConfig(
