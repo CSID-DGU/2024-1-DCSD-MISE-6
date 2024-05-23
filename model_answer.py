@@ -18,7 +18,6 @@ quant_config = BitsAndBytesConfig(
     bnb_4bit_use_double_quant=False
 )
 
-# 토크나이저 및 모델 불러오기
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 tokenizer.pad_token = tokenizer.eos_token  # 패딩 토큰 설정
 
@@ -45,30 +44,25 @@ def apply_chat_template(messages, add_generation_prompt=True, return_tensors="pt
 
 @app.route('/model', methods=['POST'])
 def model_endpoint():
-    # main.py의 keyword 엔드포인트 호출
-    keyword_url = "http://127.0.0.1:5000/"  # main.py가 실행 중인 로컬 서버 주소
+    keyword_url = "http://127.0.0.1:5000/" 
     headers = {'Content-Type': 'application/json'}
     req_data = request.get_json()
 
-    # main.py의 keyword 함수 호출
     keyword_response = requests.post(keyword_url, headers=headers, json=req_data).json()
     text = keyword_response['template']['outputs'][0]['simpleText']['text']
     text_out = req_data['userRequest']['utterance']
 
     # 대화형 메시지 설정
     messages = [
-        {"role": "system", "content": "상대방의 요청에 최대한 자세하고 친절하게 답하자. 모든 대답은 한국어(Korean)으로 대답해줘. 모르는 것은 답변할 수 없다고 알려주고 전문가와 상담하라고 하자. 똑같은 문장을 반복해서 대답하는 것은 하지 말자."},
+        {"role": "system", "content": "모든 대답은 한국어(Korean)으로 대답해줘. 너는 법률상담 전문가야. user의 질문은 assistant가 주는 정보를 이용해서 법률 답변을 생성하자."},
         {"role": "user", "content": text},
         {"role": "assistant", "content": text_out}
     ]
-
-    # 입력 인코딩
+    
     inputs = apply_chat_template(messages).to(model.device)
 
-    # 종료 토큰 설정
     terminators = [tokenizer.eos_token_id]
 
-    # 응답 생성
     outputs = model.generate(
         inputs.input_ids,
         attention_mask=inputs.attention_mask,
