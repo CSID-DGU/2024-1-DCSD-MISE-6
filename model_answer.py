@@ -18,7 +18,6 @@ quant_config = BitsAndBytesConfig(
     bnb_4bit_use_double_quant=False
 )
 
-# 토크나이저 및 모델 불러오기
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 tokenizer.pad_token = tokenizer.eos_token  # 패딩 토큰 설정
 
