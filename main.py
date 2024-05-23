@@ -36,6 +36,10 @@ def classify_input(input_data):
 
 application = Flask(__name__)
 
+# 글로벌 변수 설정
+before_text = ""
+text = ""
+
 @application.route("/", methods=['POST'])
 def keyword():
     req = request.get_json()
