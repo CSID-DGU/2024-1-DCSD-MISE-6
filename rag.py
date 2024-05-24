@@ -2,7 +2,6 @@ import sys
 import pandas as pd
 import csv
 import re
-csv.field_size_limit(sys.maxsize)
 from langchain_community.document_loaders import CSVLoader
 from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter,CharacterTextSplitter
@@ -16,7 +15,7 @@ from langchain.retrievers import EnsembleRetriever
 
 
 def process_query(query):
-
+    csv.field_size_limit(sys.maxsize)
     loader = CSVLoader(file_path='/home/mise6/mise_code/total_dataset.csv')
     document = loader.load()
 
@@ -48,8 +47,12 @@ def process_query(query):
 
     # Create prompt
     info = final[0].page_content.split('\n')
-    사건명 = info[0].split(':')[1].strip()
-    판시사항 = info[1].split(':')[1].strip()
-    판결요지 = info[2].split(':')[1].strip()
-
-    return 판시사항,판결요지
+    # 사건명 = info[0].split(':')[1].strip()
+    # 판시사항 = info[1].split(':')[1].strip()
+    # 판결요지 = info[2].split(':')[1].strip()
+    result_data = {
+    "사건명": info[0].split(':')[1].strip(),
+    "판시사항": info[1].split(':')[1].strip(),
+    "판결요지": info[2].split(':')[1].strip()
+    }
+    return result_data
