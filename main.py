@@ -40,28 +40,16 @@ application = Flask(__name__)
 before_text = ""
 text = ""
 
-@application.route("/", methods=['POST'])
 def keyword():
     req = request.get_json()
     text_ck = req['userRequest']['utterance']
     text_out = classify_input(text_ck)
     before_text = process_query(text_out)
     text = create_output(before_text)
-    
-
-    res = {
-        "version": "2.0",
-        "template": {
-            "outputs": [
-                {
-                    "simpleText": {
-                        "text": text
-                    }
-                }
-            ]
-        }
-    }
-    return jsonify(res)
 
 if __name__ == "__main__":
-    application.run(host='0.0.0.0', port=5000, threaded=True)
+    text_ck="교통법규 위반으로 벌점을 받았습니다. 이 벌점은 소멸되지 않고 계속 누적되나요?"
+    text_out = classify_input(text_ck)
+    before_text = process_query(text_out)
+    text = create_output(before_text)
+

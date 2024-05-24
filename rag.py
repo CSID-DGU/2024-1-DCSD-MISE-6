@@ -52,20 +52,4 @@ def process_query(query):
     판시사항 = info[1].split(':')[1].strip()
     판결요지 = info[2].split(':')[1].strip()
 
-    multiple_input_prompt = PromptTemplate(
-        input_variables=["카테고리", "판시사항", "판결요지", "질문"],
-        template="다음 카테고리, 판시사항, 판결요지를 참고하여 사용자 질의에 대해 답변을 생성해주세요.\n"
-                 "카테고리: {카테고리}\n"
-                 "판시사항: {판시사항}\n"
-                 "판결요지: {판결요지}\n\n"
-                 "사용자 질의: {질문}"
-    )
-
-    final_prompt = multiple_input_prompt.format(
-        카테고리=사건명, 
-        판시사항=판시사항, 
-        판결요지=판결요지, 
-        질문=query
-    )
-
-    return final_prompt
+    return 판시사항,판결요지
