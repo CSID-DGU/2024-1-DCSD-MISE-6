@@ -4,5 +4,5 @@
 
 |                   팀장                    |                     팀원                     |                              팀원                               |                               팀원                                |
 | :-----------------------------------------: | :--------------------------------------------: | :-------------------------------------------------------------: | :-------------------------------------------------------------: |
-| ![](https://github.com/lee-cheolwoo.png?size=100) | ![](https://github.com/seonggeuns.png?size=100) | <img src="https://github.com/y8jinn.png" width="200px" height="150px"/> | <img src="https://github.com/JianKim3293.png?size=100"> |
+| ![](https://github.com/lee-cheolwoo.png?size=100) | ![](https://github.com/seonggeuns.png?size=100) | <img src="https://github.com/y8jinn.png" width="400px" height="150px"/> | <img src="https://github.com/JianKim3293.png?size=100"> |
 |     [이철우](https://github.com/lee-cheolwoo)     |     [최성근](https://github.com/seonggeuns)     |           [정유진](https://github.com/y8jinn)            |           [김지안](https://github.com/JianKim3293)            |
