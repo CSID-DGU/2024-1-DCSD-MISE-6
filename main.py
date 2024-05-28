@@ -17,6 +17,7 @@ from flask import Flask, request, jsonify
 import requests
 import threading
 import time
+from model_ans import *
 
 
 def is_image(file_path):
@@ -90,7 +91,9 @@ def process_request_async(text_ck, callback_url):
     try:
         text_out = classify_input(text_ck)  # 입력 분류
         rag_text = process_query(text_out)  # 최종 처리
-        final_text = create_output(rag_text)
+        ing_text = model_answer(text_ck,rag_text) # 라마 
+        final_text = remove_redundancie(ing_text)
+        # final_text = create_output(rag_text)
         send_callback_response(callback_url, final_text)  # 콜백 URL로 결과 전송
     except Exception as e:
         print(f"Error in processing request asynchronously: {e}")
@@ -112,8 +115,7 @@ def keyword():
             }
         })
     else:
-        text_out = classify_input(text_ck)
-        final_text = process_query(text_out)
+        final_text = "다시질문해주세요"
         return jsonify({
             "version": "2.0",
             "template": {
