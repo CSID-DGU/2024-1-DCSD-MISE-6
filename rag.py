@@ -55,4 +55,4 @@ def process_query(query):
     "판시사항": info[1].split(':')[1].strip(),
     "판결요지": info[2].split(':')[1].strip()
     }
-    return result_data
+    return result_data["판결요지"]
