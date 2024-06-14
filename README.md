@@ -35,7 +35,7 @@
 ## 성능 평가
 정성적 평가  
 법률 특화 챗봇의 성능 평가를 위해 생활법령정보의 10개 질문을 테스트 질문으로 선정했습니다. 각 질문당 0~5점을 부여했으며, 총점은 50점 만점으로 평가를 진행했습니다. 비교모델은 일반 Llama3 모델과 저희의 MISE 챗봇 모델이며, 각각 법률 전문가 비교, 답안과의 맥락 비교를 시행했습니다.  
-<img src="images/readme_image4.png" alt="result" width="600" height="600"> 
+<img src="images/readme_image44.png" alt="result" width="600" height="600"> 
 
 정량적 평가  
 Trulens라는 RAG 애플리케이션 평가 프레임워크를 활용했습니다. Trulens에서 지원하는 RAG Triad(Answer Relevance, Context Relevancae, Groundedness) 지표로 평가를 진행했습니다.
