@@ -30,6 +30,7 @@
 
 ## 최종 결과 설명
 ![result](images/readme_image3.png)
+<img src="images/readme_image3.png" alt="result" width="600">
 카카오톡 채널을 통해 구현된 법률 상담 챗봇입니다. 사용자는 법률 관련 이미지나 텍스트를 통해 챗봇에게 질문할 수 있고, 챗봇은 이를 분석하여 적절한 답변을 제공합니다.
 
 ## 패키지 버전
