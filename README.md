@@ -10,3 +10,22 @@
 | :-----------------------------------------: | :--------------------------------------------: | :-------------------------------------------------------------: | :-------------------------------------------------------------: |
 | ![](https://github.com/lee-cheolwoo.png?size=100) | ![](https://github.com/seonggeuns.png?size=100) | <img src="https://github.com/y8jinn.png" width="400px" height="150px"/> | <img src="https://github.com/JianKim3293.png?size=100"> |
 |     [이철우](https://github.com/lee-cheolwoo)     |     [최성근](https://github.com/seonggeuns)     |           [정유진](https://github.com/y8jinn)            |           [김지안](https://github.com/JianKim3293)            |
+
+
+
+이 프로젝트를 실행하기 위해 필요한 패키지는 다음과 같습니다:
+- `numpy==1.22.4`
+- `pandas==2.0.3`
+- `scipy==1.10.1`
+- `matplotlib-inline==0.1.7`
+- `tensorflow==2.8.2`
+- `torch==2.2.2`
+- `transformers==4.37.2`
+- `flask==3.0.3`
+- `requests==2.22.0`
+- `google-cloud-vision==3.0.2`
+- `peft==0.8.2`
+
+설치하려면 다음 명령어를 사용하세요:
+```sh
+pip install -r requirements.txt
