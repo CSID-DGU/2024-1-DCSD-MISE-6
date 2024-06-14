@@ -11,6 +11,12 @@
 | ![](https://github.com/lee-cheolwoo.png?size=100) | ![](https://github.com/seonggeuns.png?size=100) | <img src="https://github.com/y8jinn.png" width="400px" height="150px"/> | <img src="https://github.com/JianKim3293.png?size=100"> |
 |     [이철우](https://github.com/lee-cheolwoo)     |     [최성근](https://github.com/seonggeuns)     |           [정유진](https://github.com/y8jinn)            |           [김지안](https://github.com/JianKim3293)            |
 
+## 프로젝트 배경
+!(images/readme_image1.png)
+리걸테크 산업은 성장하고 있음에도 불구하고 일반 사용자들의 법률 서비스 접근성은 떨어지고 있는 상황이다. 
+그래서 이러한 문제를 해결하고자 본 프로젝트를 제안한다.
+
+
 ## 개발 목표
 
 - 사용자 맞춤형 실시간 법률 상담 제공
